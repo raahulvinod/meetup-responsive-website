@@ -46,6 +46,64 @@ img {
 }
 
 /* === 01. Header  */
+header {
+    line-height: 90px;
+}
+header :where(nav, .menu, .menu ul) {
+    display: flex;
+    align-items: center;
+}
+.logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-right: 2.5rem;
+}
+/* Header: responsive menu */
+nav {
+    justify-content: space-between;
+}
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    background-color: yellowgreen;
+    z-index: 100;
+    transform: translate3d(-100%, 0, 0);
+    visibility: hidden;
+    transition: transform .3s, visibility .3s;
+
+}
+.showmenu .menu {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+}
+.menu ul {
+    flex-direction: column;
+    line-height: normal;
+    width: 100%;
+    gap: 1em;
+    font-size: 1.75em;
+}
+.menu .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: normal;
+    padding: 0.75rem;
+    font-size: 1.5em;
+    display: flex;
+    
+}
+.menu a {
+    transition: color .3s;
+}
+.menu a:hover {
+    color: var(--main-color);
+}
+
 
 /* === 02. Hero  */
 
@@ -61,3 +119,22 @@ img {
 
 /* === 08. Animation  */
 
+@media screen and (min-width: 992px) {
+    header {
+    line-height: 150px;
+    }
+    nav {
+        justify-content: unset;
+    }
+    .menu {
+        position: relative;
+        background-color: transparent;
+        transform: none;
+    }
+    .menu ul {
+        font-size: inherit;
+        flex-direction: row;
+        line-height: inherit;
+        gap: 2.5em;
+    }
+}
