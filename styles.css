@@ -497,10 +497,46 @@ footer .copyright {
 }
 
 
-
-
-
 /* === 09. Animation  */
+.animate > div,
+.side.animate li {
+    opacity: 0;
+    transition: transform 1.5s, opacity 1.5s;
+}
+.up.animate > div {
+    transform: translateY(20%);
+}
+.down.animate > div {
+    transform: translateY(-20%);
+}
+:is(.up, .down).animate.this > div {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.animate > div:nth-child(2), .animate li:nth-child(1) {
+    transition-delay: .3s;
+}
+.animate > div:nth-child(3), .animate li:nth-child(2) {
+    transition-delay: .5s;
+}
+.animate li:nth-child(3) {
+    transition-delay: .7s;
+}
+.animate li:nth-child(4) {
+    transition-delay: .7s;
+}
+.animate li:nth-child(5) {
+    transition-delay: .7s;
+}
+
+.side.animate li {
+    transform: translateX(20%);
+}
+.side.animate.this li {
+    transform: translateX(0);
+    opacity: 1;
+}
 
 @media screen and (min-width: 992px) {
     

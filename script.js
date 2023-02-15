@@ -7,3 +7,17 @@ menuTrigger.addEventListener('click', function(){
 closeTrigger.addEventListener('click', function(){
     giveClass.classList.remove('showmenu')
 })
+
+//Animated items on scroll
+
+const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.intersectionRatio > 0){
+            entry.target.classList.add('this')
+        }
+    })
+})
+const boxEllist = document.querySelectorAll('.animate');
+boxEllist.forEach((el) =>{
+    io.observe(el)
+})
