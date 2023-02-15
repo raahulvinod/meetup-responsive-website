@@ -160,7 +160,73 @@ nav {
 
 
 /* === 02. Hero  */
-
+main > div {
+    padding-bottom: 8rem;
+}
+.grid {
+    display: flex;
+    padding-top: 50px;
+}
+.hero .grid {
+    flex-direction: column-reverse;
+}
+.grid .half {
+    flex: 1 0 50%;
+}
+.grid__text {
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+    padding: 7em 0 0 2em;
+    height: 100%;
+}
+:where(.grid, .grid__text) h2 {
+    font-size: 3em;
+    font-weight: 800;
+}
+.grid p {
+    color: var(--grey-color);
+}
+.start-meeting {
+    display: flex;
+    margin-top: 3em;
+    align-self: center;
+    text-align: right;
+}
+.start-meeting .button {
+    position: relative;
+    margin-left: 1.5em;
+}
+.start-meeting .button::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top:0;
+    width: 50px;
+    height: 50px;
+    margin-left: -14px;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    transform: scale(1.75);
+    opacity: .15;
+}
+.start-meeting .button a {
+    min-width: auto;
+    font-size: 1.5em;
+    font-weight: 400;
+    margin: 0 0 0 1em;
+    padding: 0.25em;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(135deg);
+    z-index: 1;
+}
+.start-meeting .button a i {
+    transform: rotate(-135deg);
+}
 /* === 03. Features  */
 
 /* === 04. Brands  */
@@ -194,5 +260,12 @@ nav {
     }
     .button .menu-trigger, .menu .close {
         display: none;
+    }
+    .hero .grid {
+        flex-direction: row;
+        padding: 0;
+    }
+    .hero .grid .half:last-child {
+        padding-left: 130px;
     }
 }
