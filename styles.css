@@ -69,7 +69,7 @@ nav {
     right: 0;
     bottom: 0;
     width: 320px;
-    background-color: yellowgreen;
+    background-color: var(--dark-color);
     z-index: 100;
     transform: translate3d(-100%, 0, 0);
     visibility: hidden;
@@ -103,6 +103,23 @@ nav {
 .menu a:hover {
     color: var(--main-color);
 }
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--main-color);
+    opacity: 0;
+    z-index: 99;
+    visibility: hidden;
+}
+.showmenu .overlay {
+    opacity: .75;
+    visibility: visible;
+}
+
+
 
 
 /* === 02. Hero  */
@@ -130,6 +147,7 @@ nav {
         position: relative;
         background-color: transparent;
         transform: none;
+        visibility: visible;
     }
     .menu ul {
         font-size: inherit;
